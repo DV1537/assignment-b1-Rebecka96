@@ -15,6 +15,8 @@ class Shape
         int defaultArea = -1; //arean för point, line och konkav
         double *xCoord;
         double *yCoord;
+        int pointCounter;
+        int nrCounter;
     public:
         virtual std::string getType() = 0;
         virtual double area() = 0;
@@ -22,6 +24,12 @@ class Shape
         virtual Position position() = 0;
         virtual bool isConvex();
         virtual double distance(Shape *s);
+        //B1 begins here
+        virtual Shape& operator+(const Shape &s);
+        friend std::ostream& operator<<(std::ostream& os, const Shape &s);
+        double* gettingXCoord() {return xCoord;}
+        double* gettingYCoord() {return yCoord;}
+        int theAmountOfCoords() {return pointCounter;}
 };
 
 #endif

@@ -30,3 +30,13 @@ double Shape::distance(Shape *s)
 
     return distance;
 }
+
+std::ostream& operator<<(std::ostream& os, const Shape &s)
+{
+    for(int i = 0; i < s.nrCounter; i++)
+    {
+        os << "(" << s.xCoord[i] << "," << s.yCoord[i] << ")" << std::endl;
+    }
+
+    return os;
+}

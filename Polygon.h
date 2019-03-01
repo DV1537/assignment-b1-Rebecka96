@@ -20,3 +20,5 @@ class Polygon : public Shape
 
         friend std::ostream& operator<<(std::ostream& os, const Polygon& other);
 };
+
+#endif
